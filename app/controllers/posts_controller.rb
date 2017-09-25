@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update(post_params)
+    @post.update(post_params) #update checks if parameters are valid.  If it isn't then it won't save and it will return false
     if @post.valid?
       redirect_to post_path(@post)
     else
